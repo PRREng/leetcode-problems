@@ -15,13 +15,13 @@ public:
         if (list1 == nullptr || list2 == nullptr) 
             return (list1 == nullptr) ? list2 : list1;
         
-        ListNode * head;
+        ListNode * head, next;
         if (list1->val <= list2->val) {
-            ListNode*next = list1->next;
+            next = list1->next;
             list1->next = mergeTwoLists(next, list2);
             head = list1;
         } else {
-            ListNode *next = list2->next;
+            next = list2->next;
             list2->next = mergeTwoLists(list1, next);
             head = list2;
         }
